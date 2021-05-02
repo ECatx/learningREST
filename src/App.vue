@@ -1,6 +1,6 @@
 <template>
   <div class="w-72 h-72 bg-warmGray-400">
-    <div class="w-48 h-48">
+    <div class="w-320 h-320">
          <img :src="cats.url">
     </div>
     <div class="flex mx-auto flex-row">
