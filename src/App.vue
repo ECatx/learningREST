@@ -1,24 +1,22 @@
 <template>
-  <div class="main">
-    <div class="title">
-      <mdi:controller-classic-outline />
-      <h1 class="">Hello There</h1>
+  <div class="w-72 h-72 bg-warmGray-400">
+    <div class="w-48 h-48">
+         <img :src="cats.url">
     </div>
-    <p class="text-xl">Mouse is on {{ x }} and {{ y }}</p>
+    <div class="flex mx-auto flex-row">
+      <label>Test</label>
+      <input class="flex" :value=cats.url :disabled=1>
+      <button @click="getCat">Get new Cat</button>
+    </div>
   </div>
 </template>
 
 <script setup>
-  import { useMouse } from '@vueuse/core'
+import {onMounted} from 'vue'
+import {axios} from 'axios'
+import {getCat,cats} from './pages/getCats'
 
-  const { x, y } = useMouse()
+  onMounted(() => {
+    getCat()
+  })
 </script>
-
-<style lang="postcss">
-  .main {
-    @apply flex flex-col items-center justify-center min-h-screen space-x-4 text-6xl text-coolGray-300 font-extralight;
-  }
-  .title {
-    @apply flex items-center justify-center;
-  }
-</style>
