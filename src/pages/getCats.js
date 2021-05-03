@@ -16,6 +16,5 @@ const api = axios.create({
     const ressource = searchItem.value ? 'images/search' : 'images/search'
     const response = await api(ressource , { params: {limit:1, size:"full"} })
     cats.value = response.data[0]
-    console.log(response.data[0].url)
   }
 
